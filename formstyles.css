@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'berkshire_swashregular';
+    src: url('fonts/berkshireswash-regular-webfont.woff2') format('woff2'),
+         url('fonts/berkshireswash-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'moonless_scregular';
+    src: url('fonts-m/moonlesssc-regular_1-webfont.woff2') format('woff2'),
+         url('fonts-m/moonlesssc-regular_1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'journalregular';
+    src: url('fonts-j/journal-webfont.woff2') format('woff2'),
+         url('fonts-j/journal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container{
+    display:flex;
+}
+
+.logos{
+    background-image: url("bike.jpg");
+    filter: grayscale(80%);
+    background-size: cover; 
+    background-position: center;
+    width: 60vw;
+    height: 100vh;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+}
+.banner{
+   flex:1;
+}
+
+footer {
+   text-align: center;
+   font-family: 'moonless_scregular';
+   color: white;
+}
+
+.banner > div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   top: 20vh;
+   background-color: rgba(48, 47, 47, 0.555);
+   padding: 15px 0;
+}
+
+img[src^="odin"] {
+   height: 13vh;
+   width: auto;
+}
+
+.banner p {
+   font-family: 'berkshire_swashregular';
+   color: white;
+}
+
+.sign-up {
+    width: 100vw;
+    padding-top: 100px;
+    background-color: #fffae898;
+}
+
+.sign-up p {
+    margin-left: 40px;
+    padding-right: 160px;
+}
+.sign-up > p {
+    font-family: 'journalregular';
+    font-size: 1.5rem;
+}
+.sign-up p:first-child, p:nth-child(2) {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.form{
+    background-color: #bee6cb8e;
+    font-family: 'moonless_scregular';
+    padding: 10px 0;
+}
+.form > p {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+fieldset{
+    border: none;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin-left: 40px;
+}
+fieldset > div {
+    display: flex;
+    flex-direction: column;
+} 
+
+input {
+    width: 200px;
+    height: 20px;
+}
+
+button{
+    margin-left: 50px;
+    margin-top: 30px;
+    background-color: #CB5A44;
+    padding: 5px 40px;
+    border-radius: 5px;
+    font-family: 'moonless_scregular';
+    font-weight: bolder;
+    font-size: 16pt;
+    color: white;
+    border: none;
+    border-style: outset;
+    box-shadow: 2px 2px 5px gray;
+}
