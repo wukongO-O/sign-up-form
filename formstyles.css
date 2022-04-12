@@ -20,6 +20,10 @@
     font-style: normal;
 }
 
+body{
+    margin: 0;
+}
+
 .container{
     display:flex;
 }
@@ -31,22 +35,13 @@
     background-position: center;
     width: 60vw;
     height: 100vh;
-}
-
-.logos {
     display: flex;
     flex-direction: column;
 }
+
 .banner{
    flex:1;
 }
-
-footer {
-   text-align: center;
-   font-family: 'moonless_scregular';
-   color: white;
-}
-
 .banner > div {
    display: flex;
    align-items: center;
@@ -56,15 +51,25 @@ footer {
    background-color: rgba(48, 47, 47, 0.555);
    padding: 15px 0;
 }
-
 img[src^="odin"] {
-   height: 13vh;
-   width: auto;
+    height: 13vh;
+    width: auto;
+ }
+.banner p {
+    font-family: 'berkshire_swashregular';
+    color: white;
 }
 
-.banner p {
-   font-family: 'berkshire_swashregular';
-   color: white;
+footer {
+    text-align: center;
+    font-family: 'moonless_scregular';
+    color: white;
+}
+footer > a{
+    color:white;
+}
+footer > a:visited{
+    color: #bee6cb8e;
 }
 
 .sign-up {
@@ -72,7 +77,6 @@ img[src^="odin"] {
     padding-top: 100px;
     background-color: #fffae898;
 }
-
 .sign-up p {
     margin-left: 40px;
     padding-right: 160px;
@@ -90,16 +94,15 @@ img[src^="odin"] {
     background-color: #bee6cb8e;
     font-family: 'moonless_scregular';
     padding: 10px 0;
+    box-shadow: 2px 2px 5px gray;
 }
 .form > p {
     margin-bottom: 0;
     margin-top: 10px;
 }
-fieldset{
-    border: none;
-}
 
-fieldset{
+fieldset {
+    border: none;
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -113,6 +116,12 @@ fieldset > div {
 input {
     width: 200px;
     height: 20px;
+}
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: rgba(243, 127, 82, 0.842);
+}
+input:not(:focus):not(:placeholder-shown):valid {
+    border-color: rgba(0, 128, 0, 0.712);
 }
 
 button{
@@ -128,4 +137,12 @@ button{
     border: none;
     border-style: outset;
     box-shadow: 2px 2px 5px gray;
+}
+button:hover{
+    background-color: #D97364;
+}
+button:active{
+    background-color: #D97364;
+    box-shadow: 1px 1px 2px gray;
+    transform: translateY(4px);
 }

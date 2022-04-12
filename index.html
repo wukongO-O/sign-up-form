@@ -26,43 +26,58 @@
         
         <div class="form">
         <p>Let's do this!</p>
-        <form method="post">
+        <form method="post" onsubmit="confirm()">
             <fieldset>
                 <div>
-                    <label for="first_name">FIRST NAME</label>
-                    <input type="text" id="first_name" name="firstname">
+                    <label for="first_name">First name*</label>
+                    <input type="text" id="first_name" name="firstname" placeholder=" " required>
                 </div>
                 <div>
-                    <label for="last_name">LAST NAME</label>
-                    <input type="text" id="last_name" name="lastname">
+                    <label for="last_name">Last name</label>
+                    <input type="text" id="last_name" name="lastname" placeholder=" ">
                 </div>
             </fieldset>
             <fieldset>
                 <div>
-                    <label for="user_email">EMAIL</label>
-                    <input type="email" id="user_email" name="email">
+                    <label for="user_email">Email address*</label>
+                    <input type="email" id="user_email" name="email" pattern="([a-zA-Z0-9\_\-\.]+)@([a-zA-Z0-9]+).(.+)" placeholder=" " required>
                 </div>
                 <div>
-                    <label for="phone_number">PHONE NUMBER</label>
-                    <input type="number" id="phone_number" name="phone">
+                    <label for="phone_number">Phone number</label>
+                    <input type="tel" id="phone_number" name="phone" pattern="(.?(\d{3}).*(\d{3}).*(\d{4}))" title="Please enter a valid 10-digit phone number, e.g.123-456-7890." placeholder=" ">
                 </div>
             </fieldset>
             <fieldset>
                 <div>
-                    <label for="user_password">PASSWORD</label>
-                    <input type="password" id="user_password" name="password">
+                    <label for="user_password">Password*</label>
+                    <input type="password" id="user_password" name="password" minlength="6" placeholder=" " required>
                 </div>
                 <div>
-                    <label for="password_confirm">CONFIRM PASSWORD</label>
-                    <input type="password" id="password_confirm" name="passwordcheck">
+                    <label for="password_confirm">Confirm password*</label>
+                    <input type="password" id="password_confirm" name="passwordcheck" placeholder=" " required>
+                    <div id="errormsg" style="color: rgba(243, 127, 82, 0.842); font-weight: bold;"></div>
                 </div>
             </fieldset>
+            </div>
+                <button type="submit">Create Account</button>
+                <p>Aready have an account?<a>Log in</a></p>
+            </div>
         </form>
-    </div>
-    <button type="submit">Create Account</button>
-    <p>Aready have an account?<a>Log in</a></p>
-    </div>
 </div>
-    
+
+<script>
+    const password = document.querySelector("#user_password");
+    const password2 = document.querySelector("#password_confirm");
+    const btn = document.querySelector("button");
+    const emsg = document.querySelector("#errormsg");
+    btn.addEventListener('click', ()=> {
+        if (password.value != password2.value) {
+            password2.setCustomValidity("Password does not match.");
+            password.setCustomValidity("Password does not match.");
+            return emsg.textContent = "Password does not match."
+    };
+    }); 
+</script>
+
 </body>
 </html>
